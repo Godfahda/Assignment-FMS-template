@@ -1,0 +1,49 @@
+﻿<!-- MotSearchViewModel -->
+@model IList<Mot>
+
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/Mot", "Mot"), ("","Index") })>
+<h3>Mot List</h3>
+
+<!-- note use of flex box here to ensure the button and search form are aligned on a row with space between -->
+<div class="my-4 d-flex flex-row justify-content-between align-items-center">  
+   <a asp-action="Create" class="btn btn-primary btn-sm">Create Mot</a>   
+   <!-- TBC -- add partial to search Mot issues -->
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+         <th>Id</th>
+         <th>Vehicle</th>        
+         <th>Issued On</th> 
+         <th>Test Report</th> 
+         <th>Test Result</th>   
+         <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+       
+       
+      @foreach(var m in Model) {
+          <tr>
+            <td>@m.Id</td>
+            <td>@m.Vehicle.Make</td>
+            <td>@m.IssueDate.ToShortDateString()</td>
+            <td>@m.TestReport.Substring(0, m.TestReport.Length < 20 ? m.TestReport.Length : 20) ...</td>
+            <td>
+               <i asp-condition="@m.TestResult"    class="bi bi-toggle-on"></i>
+               <i asp-condition="@(m.TestResult)" class="bi bi-toggle-off"></i>  
+            </td>
+            <td>
+
+               <!--Anchor tag to navigate to Mot Details action -->
+               <a asp-action="Details" asp-route-id="@m.Id">
+                  <i class="bi bi-Mot-detailed"></i> Details
+               </a>                
+
+                                                   
+            </td>
+         </tr>
+      }
+    </tbody>
+</table>

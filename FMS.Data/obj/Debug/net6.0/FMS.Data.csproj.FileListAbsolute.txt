@@ -1,0 +1,12 @@
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\bin\Debug\net6.0\FMS.Data.deps.json
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\bin\Debug\net6.0\FMS.Data.dll
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\bin\Debug\net6.0\ref\FMS.Data.dll
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\bin\Debug\net6.0\FMS.Data.pdb
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.csproj.AssemblyReference.cache
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.AssemblyInfoInputs.cache
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.AssemblyInfo.cs
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.csproj.CoreCompileInputs.cache
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.dll
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\ref\FMS.Data.dll
+C:\Users\iammi\Downloads\Assignment-FMS-template\FMS.Data\obj\Debug\net6.0\FMS.Data.pdb

@@ -1,0 +1,51 @@
+@model IList<Vehicle>
+
+<partial name="_BreadCrumbs" model=@(new [] {
+    ("/","Home"),
+    ("","Vehicles")
+}) />
+
+<h3 class="mb-3">Vehicle List</h3>
+
+<a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm btn-primary my-3" asp-action="Create" >
+    <i class="bi bi-plus"></i> Create
+</a>     
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Registraion Number</th>
+            <th>Fuel Type</th>
+            <th>Body Type</th>
+            <th>Transmission Type</th>
+            <th>CC</th>
+            <th>Number Of Doors</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var v in Model) {
+            <tr>
+                <td>@v.Make</td>
+                <td>@v.Model</td>
+                <td>@v.Year</td>
+                <td>@v.RegNumber</td>
+                <td>@v.FuelType</td>
+                <td>@v.BodyType</td>
+                <td>@v.TransmissionType</td>
+                <td>@v.CC</td>
+                <td>@v.NumberOfDoors</td>
+                <td>
+                    <!-- Add View link -->
+                    <a data-bs-toggle="tooltip" data-bs-placement="top" title="view Vehicle details" asp-controller="Vehicle" asp-action="Details" asp-route-id=@v.Id><i class="bi bi-display"></i></a>  
+                    <!-- Add edit link  -->
+                    <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="Edit" asp-route-id=@v.Id><i class="bi bi-pen"></i></a>
+                    <!-- Add delete link -->
+                    <a asp-condition=@User.IsInRole("admin") asp-action="Delete" asp-route-id=@v.Id><i class="bi bi-trash"></i></a>
+                </td>
+            </tr>
+        }        
+    </tbody>
+</table>

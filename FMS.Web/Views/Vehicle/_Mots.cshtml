@@ -1,0 +1,43 @@
+@model Vehicle
+
+@if (Model.Mot.Count == 0)
+{
+    <h5>No MOT yet....</h5>
+}
+else
+{
+    <div class="card rounded shadow">
+        <table class="table table-sm">
+            <thead>
+                <tr>           
+                    <th>MOT ID</th>
+                    <th>Issued Date</th>  
+                    <th>MOT Status</th>       
+                    <th>Actions</th>  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var m in Model.Mot) {
+                    <tr>              
+                        <td>@m.Id</td>
+                        <td>@m.IssueDate</td>  
+                        <td>
+                            @if (@m.TestResult) 
+                            {
+                                <i class="bi bi-toggle-off"></i>
+                                
+                            }
+                            else
+                            {
+                                <i class="bi bi-toggle-on"></i>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="MOTDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                        </td>             
+                    </tr>   
+                }
+            </tbody>
+        </table>
+    </div>
+}
